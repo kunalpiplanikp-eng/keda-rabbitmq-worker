@@ -1,4 +1,2 @@
 resources:
   - worker-deployment.yaml
-  - rabbitmq.yaml
-  - worker-scaledobject.yaml

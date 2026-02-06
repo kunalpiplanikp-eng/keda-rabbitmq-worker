@@ -1,2 +1,3 @@
-bases:
+resources:
   - ../../base
+  - worker-scaledobject.yaml
