@@ -10,6 +10,6 @@ spec:
   triggers:
   - type: rabbitmq
     metadata:
-      host: "amqp://guest:guest@rabbitmq:5672/"
+      host: amqp://guest:guest@rabbitmq.default.svc.cluster.local:5672/
       queueName: "hello"
       queueLength: "1"
