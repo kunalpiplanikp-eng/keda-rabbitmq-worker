@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-worker
+spec:
+  replicas: 0 # KEDA will scale this
+  selector:
+    matchLabels:
+      app: hello-worker
+  template:
+    metadata:
+      labels:
+        app: hello-worker
+    spec:
+      containers:
+      - name: worker
+        image: kunalpiplani12/keda-worker:latest
+        imagePullPolicy: Always

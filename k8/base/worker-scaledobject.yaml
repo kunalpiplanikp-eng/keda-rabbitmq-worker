@@ -1,0 +1,15 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: hello-worker-scaledobject
+spec:
+  scaleTargetRef:
+    name: hello-worker
+  minReplicaCount: 0
+  maxReplicaCount: 5
+  triggers:
+  - type: rabbitmq
+    metadata:
+      host: "amqp://guest:guest@rabbitmq:5672/"
+      queueName: "hello"
+      queueLength: "1"
