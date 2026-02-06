@@ -6,10 +6,11 @@ spec:
   scaleTargetRef:
     name: hello-worker
   minReplicaCount: 0
-  maxReplicaCount: 5
+  maxReplicaCount: 2
   triggers:
-  - type: rabbitmq
+  - type: cron
     metadata:
-      host: amqp://guest:guest@rabbitmq.default.svc.cluster.local:5672/
-      queueName: "hello"
-      queueLength: "1"
+      timezone: Asia/Kolkata
+      start: "*/1 * * * *"
+      end: "*/2 * * * *"
+      desiredReplicas: "1"
